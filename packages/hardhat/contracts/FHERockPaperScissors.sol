@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.25;
 
-import "@fhenixprotocol/cofhe-contracts/FHE.sol";
+import "@luxfhe/cofhe-contracts/FHE.sol";
 
 contract FHERockPaperScissors {
     enum GameState { WaitingForPlayers, WaitingForMoves, WaitingForReveal, Finished }
