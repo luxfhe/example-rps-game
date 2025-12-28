@@ -4,7 +4,7 @@ A fully homomorphic encryption (FHE) implementation of Rock Paper Scissors using
 
 ## Overview
 
-This project demonstrates how to build a privacy-preserving Rock Paper Scissors game using Fully Homomorphic Encryption (FHE) on the Fhenix blockchain. Players' choices remain encrypted throughout the game, ensuring complete privacy.
+This project demonstrates how to build a privacy-preserving Rock Paper Scissors game using Fully Homomorphic Encryption (FHE) on the luxfhe blockchain. Players' choices remain encrypted throughout the game, ensuring complete privacy.
 
 ### Key Features
 
@@ -12,7 +12,7 @@ This project demonstrates how to build a privacy-preserving Rock Paper Scissors 
 - 🎮 **Real-Time Gameplay**: Interactive UI for creating and joining games
 - 💰 **ETH Betting**: Support for betting with ETH
 - 🔍 **Transparent Results**: Clear display of game outcomes while maintaining privacy
-- 🛠 **Built with CoFHE**: Leverages Fhenix's CoFHE for on-chain FHE computation
+- 🛠 **Built with CoFHE**: Leverages luxfhe's CoFHE for on-chain FHE computation
 
 ## Screenshots
 
@@ -22,7 +22,7 @@ This project demonstrates how to build a privacy-preserving Rock Paper Scissors 
 
 - **Smart Contracts**: Solidity 0.8.25 with CoFHE
 - **Frontend**: Next.js, React, TailwindCSS
-- **Blockchain**: Fhenix (Sepolia & Arbitrum Sepolia)
+- **Blockchain**: luxfhe (Sepolia & Arbitrum Sepolia)
 - **Development**: Hardhat, TypeScript
 - **Web3**: Wagmi, Viem
 
@@ -38,7 +38,7 @@ This project demonstrates how to build a privacy-preserving Rock Paper Scissors 
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/FhenixProtocol/rps-cofhe-scaffold-example.git
+git clone https://github.com/luxfheProtocol/rps-cofhe-scaffold-example.git
 cd rps-cofhe-scaffold-example
 ```
 
@@ -86,5 +86,5 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## Acknowledgments
 
 - [Scaffold-ETH 2](https://github.com/scaffold-eth/scaffold-eth-2)
-- [CoFHE](https://cofhe-docs.fhenix.zone)
-- [Fhenix](https://fhenix.io)
+- [CoFHE](https://cofhe-docs.luxfhe.zone)
+- [luxfhe](https://luxfhe.io)
