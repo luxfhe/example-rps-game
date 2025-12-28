@@ -1,0 +1,9 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+When I ask to do something and you need to change the code, do only the needed changes.
+Don't change other things in the code, for example:
+Don't remove comments in the code
+Don't change other areas that are not directly related to the specific change
