@@ -4,7 +4,7 @@ import React, { useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { CofhejsPortal } from "./cofhe/CofhejsPortal";
+import { FHEPortal } from "./fhe/FHEPortal";
 import { hardhat } from "viem/chains";
 import { Bars3Icon, BugAntIcon } from "@heroicons/react/24/outline";
 import { FaucetButton, RainbowKitCustomConnectButton } from "~~/components/scaffold-eth";
@@ -99,7 +99,7 @@ export const Header = () => {
       <div className="navbar-end grow mr-4">
         <RainbowKitCustomConnectButton />
         {isLocalNetwork && <FaucetButton />}
-        <CofhejsPortal />
+        <FHEPortal />
       </div>
     </div>
   );

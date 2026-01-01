@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.25;
 
-import "@luxfhe/cofhe-contracts/FHE.sol";
+import "@luxfi/contracts/fhe/FHE.sol";
 
 contract FHERockPaperScissors {
     enum GameState { WaitingForPlayers, WaitingForMoves, WaitingForReveal, Finished }
@@ -102,7 +102,7 @@ contract FHERockPaperScissors {
         emit PlayerJoined(gameId, msg.sender);
     }
     
-    function submitMove(uint256 gameId, InEuint8 memory encryptedChoice) external validGame(gameId) onlyPlayer(gameId) {
+    function submitMove(uint256 gameId, Euint8 memory encryptedChoice) external validGame(gameId) onlyPlayer(gameId) {
         Game storage game = games[gameId];
         
         require(game.state == GameState.WaitingForMoves, "Not accepting moves");
@@ -161,10 +161,10 @@ contract FHERockPaperScissors {
         
         require(game.state == GameState.WaitingForReveal, "Game is not ready for reveal");
 
-        (uint8 decryptedChoice1, bool choice1Ready) = FHE.getDecryptResultSafe(game.player1Choice);
+        (uint8 decryptedChoice1, bool choice1Ready) = FHE.revealSafe(game.player1Choice);
         require(choice1Ready, "Choice 1 not yet decrypted");
 
-        (uint8 decryptedChoice2, bool choice2Ready) = FHE.getDecryptResultSafe(game.player2Choice);
+        (uint8 decryptedChoice2, bool choice2Ready) = FHE.revealSafe(game.player2Choice);
         require(choice2Ready, "Choice 2 not yet decrypted");
 
         if (decryptedChoice1 == decryptedChoice2) {

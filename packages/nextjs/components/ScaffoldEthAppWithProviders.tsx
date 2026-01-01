@@ -7,17 +7,17 @@ import { AppProgressBar as ProgressBar } from "next-nprogress-bar";
 import { useTheme } from "next-themes";
 import { Toaster } from "react-hot-toast";
 import { WagmiProvider } from "wagmi";
-import { useInitializeCofhejs } from "~~/app/useCofhejs";
+import { useInitializeFHE } from "~~/app/useFHE";
 import { Footer } from "~~/components/Footer";
 import { Header } from "~~/components/Header";
-import { CofhejsPermitModal } from "~~/components/cofhe/CofhejsPermitModal";
+import { FHEPermitModal } from "~~/components/fhe/FHEPermitModal";
 import { BlockieAvatar } from "~~/components/scaffold-eth";
 import { useInitializeNativeCurrencyPrice } from "~~/hooks/scaffold-eth";
 import { wagmiConfig } from "~~/services/web3/wagmiConfig";
 
 const ScaffoldEthApp = ({ children }: { children: React.ReactNode }) => {
   useInitializeNativeCurrencyPrice();
-  useInitializeCofhejs();
+  useInitializeFHE();
 
   return (
     <>
@@ -27,7 +27,7 @@ const ScaffoldEthApp = ({ children }: { children: React.ReactNode }) => {
         <Footer />
       </div>
       <Toaster />
-      <CofhejsPermitModal />
+      <FHEPermitModal />
     </>
   );
 };
