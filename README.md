@@ -38,8 +38,8 @@ This project demonstrates how to build a privacy-preserving Rock Paper Scissors 
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/luxfheProtocol/rps-cofhe-scaffold-example.git
-cd rps-cofhe-scaffold-example
+git clone https://github.com/luxfheProtocol/rps-fhe-scaffold-example.git
+cd rps-fhe-scaffold-example
 ```
 
 2. Install dependencies:
@@ -86,5 +86,5 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## Acknowledgments
 
 - [Scaffold-ETH 2](https://github.com/scaffold-eth/scaffold-eth-2)
-- [CoFHE](https://cofhe-docs.luxfhe.zone)
+- [CoFHE](https://fhe-docs.luxfhe.zone)
 - [luxfhe](https://luxfhe.io)

@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import { Encryptable, cofhejs } from "cofhejs/web";
+import { Encryptable, fhe } from "@luxfhe/sdk/web";
 import { formatEther, parseEther } from "viem";
 import { useAccount } from "wagmi";
 import { Address, EtherInput } from "~~/components/scaffold-eth";
@@ -279,7 +279,7 @@ export const FHERockPaperScissorsComponent = () => {
     try {
       // Step 1: Encrypt the choice
       console.log("🔐 Encrypting choice", selectedChoice);
-      const encryptedResult = await cofhejs.encrypt([Encryptable.uint8(BigInt(selectedChoice))]);
+      const encryptedResult = await fhe.encrypt([Encryptable.uint8(BigInt(selectedChoice))]);
 
       if (!encryptedResult.success) {
         console.error("Failed to encrypt choice", encryptedResult.error);

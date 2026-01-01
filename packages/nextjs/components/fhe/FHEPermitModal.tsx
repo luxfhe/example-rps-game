@@ -3,16 +3,16 @@
 import { useCallback, useState } from "react";
 import { zeroAddress } from "viem";
 import { ShieldCheckIcon } from "@heroicons/react/24/solid";
-import { useCofhejsAccount, useCofhejsCreatePermit, useCofhejsModalStore } from "~~/app/useCofhejs";
+import { useFHEjsAccount, useFHEjsCreatePermit, useFHEjsModalStore } from "~~/app/useFHE";
 import { AddressInput } from "~~/components/scaffold-eth";
 
 type ExpirationOption = "1 day" | "1 week" | "1 month";
 const shareablePermits = false;
 
-export const CofhejsPermitModal = () => {
-  const { generatePermitModalOpen, generatePermitModalCallback, setGeneratePermitModalOpen } = useCofhejsModalStore();
-  const createPermit = useCofhejsCreatePermit();
-  const account = useCofhejsAccount();
+export const FHEPermitModal = () => {
+  const { generatePermitModalOpen, generatePermitModalCallback, setGeneratePermitModalOpen } = useFHEjsModalStore();
+  const createPermit = useFHEjsCreatePermit();
+  const account = useFHEjsAccount();
   const [expiration, setExpiration] = useState<ExpirationOption>("1 week");
   const [recipient, setRecipient] = useState<string>("");
   const [name, setName] = useState<string>("");
@@ -97,7 +97,7 @@ export const CofhejsPermitModal = () => {
               {(["1 day", "1 week", "1 month"] as const).map(option => (
                 <div
                   key={option}
-                  className={`btn btn-sm ${expiration === option ? "btn-cofhe" : "btn-ghost"}`}
+                  className={`btn btn-sm ${expiration === option ? "btn-fhe" : "btn-ghost"}`}
                   onClick={() => setExpiration(option)}
                 >
                   {option}
@@ -113,13 +113,13 @@ export const CofhejsPermitModal = () => {
                 <label className="text-sm font-semibold">Recipient</label>
                 <div className="flex gap-2">
                   <div
-                    className={`btn btn-sm ${!showRecipientInput ? "btn-cofhe" : "btn-ghost"}`}
+                    className={`btn btn-sm ${!showRecipientInput ? "btn-fhe" : "btn-ghost"}`}
                     onClick={() => setShowRecipientInput(false)}
                   >
                     None
                   </div>
                   <div
-                    className={`btn btn-sm ${showRecipientInput ? "btn-cofhe" : "btn-ghost"}`}
+                    className={`btn btn-sm ${showRecipientInput ? "btn-fhe" : "btn-ghost"}`}
                     onClick={() => setShowRecipientInput(true)}
                   >
                     Enter address
@@ -137,7 +137,7 @@ export const CofhejsPermitModal = () => {
           <button className="btn btn-ghost" onClick={handleClose}>
             Cancel
           </button>
-          <button className="btn btn-cofhe" onClick={handleGeneratePermit}>
+          <button className="btn btn-fhe" onClick={handleGeneratePermit}>
             Generate Permit
           </button>
         </div>

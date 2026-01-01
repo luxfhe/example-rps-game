@@ -1,7 +1,7 @@
 import React, { useCallback } from "react";
-import { FheTypes } from "cofhejs/web";
+import { FheTypes } from "@luxfhe/sdk/web";
 import { LockClosedIcon, LockOpenIcon, ShieldCheckIcon } from "@heroicons/react/24/outline";
-import { useCofhejsInitialized, useCofhejsIsActivePermitValid, useCofhejsModalStore } from "~~/app/useCofhejs";
+import { useFHEjsInitialized, useFHEjsIsActivePermitValid, useFHEjsModalStore } from "~~/app/useFHE";
 import { useDecryptValue } from "~~/app/useDecrypt";
 
 interface EncryptedZoneProps {
@@ -52,9 +52,9 @@ interface EncryptedValueProps<T extends FheTypes> {
 }
 
 export const EncryptedValue = <T extends FheTypes>({ label, fheType, ctHash }: EncryptedValueProps<T>) => {
-  const cofhejsInitialized = useCofhejsInitialized();
-  const isPermitValid = useCofhejsIsActivePermitValid();
-  const setGeneratePermitModalOpen = useCofhejsModalStore(state => state.setGeneratePermitModalOpen);
+  const fheInitialized = useFHEjsInitialized();
+  const isPermitValid = useFHEjsIsActivePermitValid();
+  const setGeneratePermitModalOpen = useFHEjsModalStore(state => state.setGeneratePermitModalOpen);
   const { onDecrypt, result } = useDecryptValue(fheType, ctHash);
 
   const handleDecrypt = useCallback(() => {
@@ -75,7 +75,7 @@ export const EncryptedValue = <T extends FheTypes>({ label, fheType, ctHash }: E
       {result.state === "no-data" && <span className="text-xs font-semibold flex-1 italic">No data</span>}
       {result.state === "encrypted" && (
         <span
-          className={`btn btn-md btn-cofhe flex-1 ${cofhejsInitialized ? "" : "btn-disabled"}`}
+          className={`btn btn-md btn-fhe flex-1 ${fheInitialized ? "" : "btn-disabled"}`}
           onClick={handleDecrypt}
         >
           <LockClosedIcon className="w-5 h-5" aria-hidden="true" />
@@ -85,7 +85,7 @@ export const EncryptedValue = <T extends FheTypes>({ label, fheType, ctHash }: E
         </span>
       )}
       {result.state === "pending" && (
-        <span className="btn btn-md btn-cofhe btn-disabled flex-1">
+        <span className="btn btn-md btn-fhe btn-disabled flex-1">
           <div className="loading-spinner loading-sm" />
           Decrypting
         </span>
