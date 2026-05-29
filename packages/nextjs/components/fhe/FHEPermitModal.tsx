@@ -62,7 +62,7 @@ export const FHEPermitModal = () => {
         <div className="flex items-center justify-center mb-4">
           <ShieldCheckIcon className="h-12 w-12 text-primary" />
         </div>
-        <h2 className="text-2xl font-bold text-center mb-4">Generate CoFHE Permit</h2>
+        <h2 className="text-2xl font-bold text-center mb-4">Generate TorusEVM coprocessor Permit</h2>
         <p className="text-center mb-6">
           A permit is required to authenticate your identity and grant access to your encrypted data.
         </p>

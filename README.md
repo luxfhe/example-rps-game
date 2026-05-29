@@ -1,6 +1,6 @@
 # 🔐 FHE Rock Paper Scissors
 
-A fully homomorphic encryption (FHE) implementation of Rock Paper Scissors using CoFHE and Scaffold-ETH 2.
+A fully homomorphic encryption (FHE) implementation of Rock Paper Scissors using TorusEVM coprocessor and Scaffold-ETH 2.
 
 ## Overview
 
@@ -12,7 +12,7 @@ This project demonstrates how to build a privacy-preserving Rock Paper Scissors 
 - 🎮 **Real-Time Gameplay**: Interactive UI for creating and joining games
 - 💰 **ETH Betting**: Support for betting with ETH
 - 🔍 **Transparent Results**: Clear display of game outcomes while maintaining privacy
-- 🛠 **Built with CoFHE**: Leverages luxfhe's CoFHE for on-chain FHE computation
+- 🛠 **Built with TorusEVM coprocessor**: Leverages luxfhe's TorusEVM coprocessor for on-chain FHE computation
 
 ## Screenshots
 
@@ -20,7 +20,7 @@ This project demonstrates how to build a privacy-preserving Rock Paper Scissors 
 
 ## Technical Stack
 
-- **Smart Contracts**: Solidity 0.8.25 with CoFHE
+- **Smart Contracts**: Solidity 0.8.25 with TorusEVM coprocessor
 - **Frontend**: Next.js, React, TailwindCSS
 - **Blockchain**: luxfhe (Sepolia & Arbitrum Sepolia)
 - **Development**: Hardhat, TypeScript
@@ -86,5 +86,5 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## Acknowledgments
 
 - [Scaffold-ETH 2](https://github.com/scaffold-eth/scaffold-eth-2)
-- [CoFHE](https://fhe-docs.luxfhe.zone)
+- [TorusEVM coprocessor](https://fhe-docs.luxfhe.zone)
 - [luxfhe](https://luxfhe.io)
